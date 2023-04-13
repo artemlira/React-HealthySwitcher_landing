@@ -1,0 +1,65 @@
+@use "variables.scss" as v;
+@use "mixins.scss" as m;
+@use "functions.scss" as f;
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+button {
+  cursor: pointer;
+  background-color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+body {
+  font-family: "HelveticaNeueCyr", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  color: v.$secondary;
+  background-color: v.$black;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+.container {
+  max-width: v.$maxWidthContainer + 30px;
+  padding: 0 0.9375rem;
+  margin-inline: auto;
+}
