@@ -8,17 +8,15 @@ module.exports = {
     'airbnb',
     // 'plugin:react-hooks/recommended',
   ],
-  overrides: [
-  ],
+  overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-  ],
+  plugins: ['react'],
   rules: {
     'react/react-in-jsx-scope': 'off',
+    'object-curly-newline': 'off',
     'linebreak-style': ['error', 'windows'],
     'import/order': [
       'error',
@@ -36,5 +34,5 @@ module.exports = {
       },
     ],
   },
-  ignorePatterns: [".eslintrc.cjs", "vite.config.js"],
+  ignorePatterns: ['.eslintrc.cjs', 'vite.config.js'],
 };

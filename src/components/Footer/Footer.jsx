@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Footer.module.scss';
+import styles from './footer.module.scss';
 
 function Footer({ props }) {
   return (
-    <section className={styles.footer}>
+    <footer className={styles.footer}>
       <div className="container">
         <div className={styles.container}>
           Footer Component
           {props}
         </div>
       </div>
-    </section>
+    </footer>
   );
 }
 
