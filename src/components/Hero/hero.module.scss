@@ -1,0 +1,87 @@
+@use '../../styles/variables.scss' as v;
+@use '../../styles/mixins.scss' as m;
+@use '../../styles/functions.scss' as f;
+
+.hero {
+  padding-block: 5rem 10.0625rem;
+
+  @include m.phone {
+    padding-block: 1.875rem 3.125rem;
+  }
+}
+
+.title {
+  font-size: 4.5rem;
+  line-height: f.ratio(72, 84.38);
+  text-align: center;
+  letter-spacing: 0.5rem;
+  text-transform: capitalize;
+  font-weight: bold;
+
+  @include m.tablet {
+    font-size: 3.25rem;
+    line-height: f.ratio(52, 64.38);
+  }
+
+  @include m.phone {
+    font-size: 2rem;
+    line-height: f.ratio(32, 44.38);
+  }
+
+  span {
+    font-weight: normal;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+.text {
+  max-width: 37.1875rem;
+  text-align: center;
+  margin-inline: auto;
+  line-height: f.ratio(16, 26);
+  opacity: 0.7;
+
+  @include m.phone {
+    font-size: 0.875rem;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.btn {
+  display: block;
+  padding: 1.5625rem 3.625rem;
+  background-color: v.$primary;
+  border-radius: 2.6875rem;
+  color: v.$black;
+  margin-inline: auto;
+  font-size: 1.125rem;
+  line-height: f.ratio(18, 21.78);
+  font-weight: 700;
+  letter-spacing: 0.1875rem;
+  transition: all 0.3s;
+
+  @include m.phone {
+    font-size: 1rem;
+    line-height: f.ratio(16, 19.78);
+    padding: 0.9375rem 1.875rem;
+  }
+
+  &:hover {
+    background-color: #2ea54b;
+    color: v.$secondary;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 4.375rem;
+
+    @include m.phone {
+      margin-bottom: 1.875rem;
+    }
+  }
+}

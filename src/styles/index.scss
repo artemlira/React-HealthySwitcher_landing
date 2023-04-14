@@ -1,6 +1,6 @@
-@use "variables.scss" as v;
-@use "mixins.scss" as m;
-@use "functions.scss" as f;
+@use 'variables.scss' as v;
+@use 'mixins.scss' as m;
+@use 'functions.scss' as f;
 
 *,
 *::before,
@@ -40,11 +40,22 @@ button {
 }
 
 body {
-  font-family: "HelveticaNeueCyr", sans-serif;
+  font-family: 'HelveticaNeueCyr', sans-serif;
   font-size: 16px;
   font-weight: normal;
   color: v.$secondary;
-  background-color: v.$black;
+  background: url('../assets/images/bg.jpg') top right / cover no-repeat,
+    v.$black;
+
+  @media screen and (max-width: 600px) {
+    background: url('../assets/images/bg.jpg') top right / contain no-repeat,
+      v.$black;
+  }
+
+  @include m.laptop {
+    // background: url('../assets/images/bg.jpg') top right / contain no-repeat,
+    //   v.$black;
+  }
 }
 
 #root {

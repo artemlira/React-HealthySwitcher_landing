@@ -3,14 +3,20 @@
 @use '../../styles/functions.scss' as f;
 
 .header {
-  border-bottom: 0.125rem solid v.$secondary;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 13;
+  border-bottom: 0.125rem solid v.$grey;
+  background-color: #252525a6;
 }
 
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-block: 2.0625rem;
+  padding-block: 1.875rem;
 }
 
 .navWrapper {
