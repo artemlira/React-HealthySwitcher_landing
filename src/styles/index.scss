@@ -44,17 +44,12 @@ body {
   font-size: 16px;
   font-weight: normal;
   color: v.$secondary;
-  background: url('../assets/images/bg.jpg') top right / cover no-repeat,
+  background: url('../assets/images/bg.jpg') top right / contain no-repeat,
     v.$black;
 
-  @media screen and (max-width: 600px) {
-    background: url('../assets/images/bg.jpg') top right / contain no-repeat,
+  @media screen and (min-width: 2400px) {
+    background: url('../assets/images/bg.jpg') top right / cover no-repeat,
       v.$black;
-  }
-
-  @include m.laptop {
-    // background: url('../assets/images/bg.jpg') top right / contain no-repeat,
-    //   v.$black;
   }
 }
 

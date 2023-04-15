@@ -1,0 +1,91 @@
+@use '../../styles/variables.scss' as v;
+@use '../../styles/mixins.scss' as m;
+@use '../../styles/functions.scss' as f;
+
+.work {
+  padding-block: 5.625rem 1.875rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  line-height: f.ratio(36, 90);
+  letter-spacing: 0.4375rem;
+  color: #d9d9d9;
+  text-align: center;
+  text-transform: capitalize;
+  background: url('../../assets/images/work.png') center center / 18.4375rem
+    5.625rem no-repeat;
+
+  @include m.phone {
+    font-size: 1.25rem;
+    line-height: f.ratio(20, 70);
+    background: url('../../assets/images/work.png') center center / 12.5rem
+      5.625rem no-repeat;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 1.75rem;
+  }
+}
+
+.line {
+  width: 3.75rem;
+  height: 0.125rem;
+  background-color: v.$primary;
+  margin-inline: auto;
+
+  &:not(:last-child) {
+    margin-bottom: 3.75rem;
+  }
+}
+
+.works {
+  display: flex;
+  gap: 1.875rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.boxWork {
+  flex: 0 0 15.9375rem;
+  padding: 1.5rem;
+  border-radius: 0.3125rem;
+  background-color: v.$darkGrey;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: v.$primary;
+    color: #191919;
+
+    .workLine {
+      background-color: #191919;
+    }
+  }
+}
+
+.workTitle {
+  font-size: 1.375rem;
+  line-height: f.ratio(22, 26);
+  text-transform: capitalize;
+
+  &:not(:last-child) {
+    margin-bottom: 0.625rem;
+  }
+}
+
+.workLine {
+  width: 3.5rem;
+  height: 0.125rem;
+  background-color: v.$primary;
+  transition: all 0.3s;
+
+  &:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.workText {
+  font-size: 0.8125rem;
+  line-height: f.ratio(13, 18);
+}
