@@ -1,0 +1,65 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Featured Meal",
+      
+      "img": "01d.jpg",
+      "imgWebp": "01d.webp",
+      "description": "Choice of: Coke, Fanta, Sprite, Upgrade to large fries, Add whopper patty, Add Tender crisp patty and more...",
+      "rating": "stars_y.png",
+      "ratingWebp": "stars_y.webp",
+      "label": "Served with french fries + drink"
+    },
+    {
+      "id": 2,
+      "title": "Featured Meal",
+      "img": "02d.jpg",
+      "imgWebp": "02d.webp",
+      "description": "Choice of: Coke, Fanta, Sprite, Upgrade to large fries, Add whopper patty, Add Tender crisp patty and more...",
+      "rating": "stars_g.png",
+      "ratingWebp": "stars_y.webp",
+      "label": "Served with french fries + drink"
+    },
+    {
+      "id": 3,
+      "title": "Featured Meal",
+      "img": "03d.jpg",
+      "imgWebp": "03d.webp",
+      "description": "Choice of: Coke, Fanta, Sprite, Upgrade to large fries, Add whopper patty, Add Tender crisp patty and more...",
+      "rating": "stars_g.png",
+      "ratingWebp": "stars_y.webp",
+      "label": "Served with french fries + drink"
+    },
+    {
+      "id": 4,
+      "title": "Featured Meal",
+      "img": "04d.jpg",
+      "imgWebp": "04d.webp",
+      "description": "Choice of: Coke, Fanta, Sprite, Upgrade to large fries, Add whopper patty, Add Tender crisp patty and more...",
+      "rating": "stars_g.png",
+      "ratingWebp": "stars_y.webp",
+      "label": "Served with french fries + drink"
+    },
+    {
+      "id": 5,
+      "title": "Featured Meal",
+      "img": "05d.jpg",
+      "imgWebp": "05d.webp",
+      "description": "Choice of: Coke, Fanta, Sprite, Upgrade to large fries, Add whopper patty, Add Tender crisp patty and more...",
+      "rating": "stars_g.png",
+      "ratingWebp": "stars_y.webp",
+      "label": "Served with french fries + drink"
+    },
+    {
+      "id": 6,
+      "title": "Featured Meal",
+      "img": "06d.jpg",
+      "imgWebp": "06d.webp",
+      "description": "Choice of: Coke, Fanta, Sprite, Upgrade to large fries, Add whopper patty, Add Tender crisp patty and more...",
+      "rating": "stars_y.png",
+      "ratingWebp": "stars_y.webp",
+      "label": "Served with french fries + drink"
+    }
+  ]
+}

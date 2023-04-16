@@ -1,57 +1,49 @@
-import React, { useEffect, useRef } from 'react';
-// eslint-disable-next-line import/no-unresolved
-import { register } from 'swiper/element/bundle';
+/* eslint-disable react/jsx-props-no-spreading */
+import React from 'react';
+import SlickSlider from 'react-slick';
+import Slide1 from '../../assets/images/fish.jpg';
+import Slide1Webp from '../../assets/images/fish.webp';
+import Slide2 from '../../assets/images/02.jpg';
+import Slide2Webp from '../../assets/images/02.webp';
+import Slide3 from '../../assets/images/dishes/02d.jpg';
+import Slide3Webp from '../../assets/images/dishes/02d.webp';
+import Slide4 from '../../assets/images/dishes/03d.jpg';
+import Slide4Webp from '../../assets/images/dishes/03d.webp';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import styles from './about.module.scss';
+import './sleder.scss';
 
-register();
 function About() {
-  const swiperRef = useRef(null);
-
-  useEffect(() => {
-    const swiperContainer = swiperRef.current;
-    const params = {
-      navigation: true,
-      centeredSlides: true,
-      speed: 500,
-      slidesPerView: 1,
-      gridRows: 1,
-      injectStyles: [
-        `
-        .swiper-button-next,
-        .swiper-button-prev {
-          background-color: white;
-          background-position: center;
-          background-size: 40px;
-          background-repeat: no-repeat;
-          padding: 8px 16px;
-          border-radius: 100%;
-          border: 2px solid black;
-          color: red;
-
-          &:hover {
-            background-color: green;
-          }
-        }
-
-        .swiper-button-prev {
-          // background-image: url("../../assets/icons/cart-outline.svg");
-        }
-
-        .swiper-button-next {
-          // background-image: url("../../assets/icons/cart-arrow-down.svg");
-        }
-
-        // .swiper-button-next::after,
-        // .swiper-button-prev::after {
-        //     content: "";
-        //   }
-`,
-      ],
-    };
-
-    Object.assign(swiperContainer, params);
-    swiperContainer.initialize();
-  }, []);
+  const settings = {
+    className: 'mySlider',
+    arrows: true,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    swipe: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 770,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          arrows: false,
+          dots: true,
+        },
+      },
+    ],
+  };
 
   return (
     <section className={styles.about}>
@@ -64,15 +56,56 @@ function About() {
             laboris enim mollit voluptate irure esse aliquip.
           </p>
           <div className={styles.slider}>
-            <swiper-container
-              class={styles.mySwiper}
-              ref={swiperRef}
-              init="false"
-            >
-              <swiper-slide class={styles.slide}>1</swiper-slide>
-              <swiper-slide class={styles.slide}>2</swiper-slide>
-              <swiper-slide class={styles.slide}>3</swiper-slide>
-            </swiper-container>
+            <SlickSlider {...settings}>
+              <div className="slide">
+                <picture>
+                  <source
+                    srcSet={Slide1Webp}
+                    type="image/webp"
+                  />
+                  <img
+                    src={Slide1}
+                    alt="red fish with vegetables"
+                  />
+                </picture>
+              </div>
+              <div className="slide">
+                <picture>
+                  <source
+                    srcSet={Slide2Webp}
+                    type="image/webp"
+                  />
+                  <img
+                    src={Slide2}
+                    alt="egg and vegetables"
+                  />
+                </picture>
+              </div>
+              <div className="slide">
+                <picture>
+                  <source
+                    srcSet={Slide3Webp}
+                    type="image/webp"
+                  />
+                  <img
+                    src={Slide3}
+                    alt="peas and beans"
+                  />
+                </picture>
+              </div>
+              <div className="slide">
+                <picture>
+                  <source
+                    srcSet={Slide4Webp}
+                    type="image/webp"
+                  />
+                  <img
+                    src={Slide4}
+                    alt="scrambled eggs with basil"
+                  />
+                </picture>
+              </div>
+            </SlickSlider>
           </div>
         </div>
       </div>

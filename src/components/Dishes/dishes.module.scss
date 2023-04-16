@@ -1,0 +1,106 @@
+@use '../../styles/variables.scss' as v;
+@use '../../styles/mixins.scss' as m;
+@use '../../styles/functions.scss' as f;
+
+.dishes {
+}
+
+.container {
+}
+
+.title {
+  margin: 90px 60px;
+  text-align: center;
+  font-size: 36px;
+  line-height: f.ratio(36, 90);
+  color: #d9d9d9;
+  letter-spacing: 7px;
+  background: url('../../assets/images/dishes.png') center center / 400px 90px
+    no-repeat;
+
+  @include m.phone {
+    margin: 50px 30px;
+    font-size: 20px;
+    line-height: f.ratio(20, 70);
+    background: url('../../assets/images/dishes.png') center center / 200px 90px
+      no-repeat;
+  }
+}
+
+.wrapperProducts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.dish {
+  border-radius: 10px;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+}
+
+.dishImage {
+  flex: 0 0 260px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.dishBody {
+  flex: 1 0 233px;
+  padding: 30px;
+  background-color: v.$darkGrey;
+  display: flex;
+  flex-direction: column;
+}
+
+.dishTitle {
+  font-size: 32px;
+  line-height: f.ratio(32, 30);
+  color: #d9d9d9;
+}
+
+.dishLabel {
+  font-size: 12px;
+  line-height: f.ratio(12, 16);
+  color: #a4a8b2;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.dishDescription {
+  flex: 1 1 auto;
+  p {
+    color: #85878c;
+    font-size: 13px;
+    line-height: f.ratio(13, 18);
+  }
+}
+
+.rating {
+  display: flex;
+  justify-content: space-between;
+}
+.stars {
+}
+.dishBtn {
+  font-weight: 900;
+  font-size: 10px;
+  line-height: f.ratio(10, 40);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  border-radius: 30px;
+  border: 2px solid #303030;
+  padding-inline: 32px;
+  transition: all 0.3s ease 0.1s;
+
+  &:hover {
+    background-color: v.$primary;
+    color: v.$darkGrey;
+  }
+}
