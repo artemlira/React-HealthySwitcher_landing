@@ -2,6 +2,7 @@ import React, { useContext, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import { MyContext } from '../Context';
+import { ReactComponent as Share } from '../../assets/icons/share.svg';
 import styles from './dishes.module.scss';
 
 const animation = {
@@ -71,6 +72,9 @@ const Dish = forwardRef(
       className={styles.dish}
       ref={ref}
     >
+      <div className={styles.share}>
+        <Share />
+      </div>
       <div className={styles.dishImage}>
         <picture>
           <source
@@ -101,6 +105,7 @@ const Dish = forwardRef(
                 alt="rating"
               />
             </picture>
+            <span>12</span>
           </div>
           <button
             type="button"

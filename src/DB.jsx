@@ -25,6 +25,23 @@ import img1WebpC3 from './assets/images/chefs/img2-03.webp';
 import img2C3 from './assets/images/chefs/img3_03.jpg';
 import img2WebpC3 from './assets/images/chefs/img3-03.webp';
 
+import dish1 from './assets/images/dishes/01d.jpg';
+import dish1Webp from './assets/images/dishes/01d.webp';
+import dish2 from './assets/images/dishes/02d.jpg';
+import dish2Webp from './assets/images/dishes/02d.webp';
+import dish3 from './assets/images/dishes/03d.jpg';
+import dish3Webp from './assets/images/dishes/03d.webp';
+import dish4 from './assets/images/fish.jpg';
+import dish4Webp from './assets/images/fish.webp';
+import dish5 from './assets/images/dishes/04d.jpg';
+import dish5Webp from './assets/images/dishes/04d.webp';
+import dish6 from './assets/images/dishes/05d.jpg';
+import dish6Webp from './assets/images/dishes/05d.webp';
+import starsY from './assets/icons/stars_y.png';
+import starsYWebp from './assets/icons/stars-y.webp';
+import starsG from './assets/icons/stars_g.png';
+import starsGWebp from './assets/icons/stars-g.webp';
+
 export const chefs = {
   chef1: {
     avatar: avatar1,
@@ -58,4 +75,71 @@ export const chefs = {
   },
 };
 
-export const bishes = {};
+export const menu = [
+  {
+    id: 1,
+    title: 'Featured Meal',
+    img: dish1,
+    imgWebp: dish1Webp,
+    description:
+      'Choice of: Coke, Fanta, Sprite, Upgrade to large fries, Add whopper patty, Add Tender crisp patty and more...',
+    rating: starsY,
+    ratingWebp: starsYWebp,
+    label: 'Served with french fries + drink',
+  },
+  {
+    id: 2,
+    title: 'Featured Meal',
+    img: dish2,
+    imgWebp: dish2Webp,
+    description:
+      'Choice of: Coke, Fanta, Sprite, Upgrade to large fries, Add whopper patty, Add Tender crisp patty and more...',
+    rating: starsG,
+    ratingWebp: starsGWebp,
+    label: 'Served with french fries + drink',
+  },
+  {
+    id: 3,
+    title: 'Featured Meal',
+    img: dish3,
+    imgWebp: dish3Webp,
+    description:
+      'Choice of: Coke, Fanta, Sprite, Upgrade to large fries, Add whopper patty, Add Tender crisp patty and more...',
+    rating: starsG,
+    ratingWebp: starsGWebp,
+    label: 'Served with french fries + drink',
+  },
+  {
+    id: 4,
+    title: 'Featured Meal',
+    img: dish4,
+    imgWebp: dish4Webp,
+    description:
+      'Choice of: Coke, Fanta, Sprite, Upgrade to large fries, Add whopper patty, Add Tender crisp patty and more...',
+    rating: starsG,
+    ratingWebp: starsGWebp,
+    label: 'Served with french fries + drink',
+  },
+  {
+    id: 5,
+    title: 'Featured Meal',
+    img: dish5,
+    imgWebp: dish5Webp,
+    description:
+      'Choice of: Coke, Fanta, Sprite, Upgrade to large fries, Add whopper patty, Add Tender crisp patty and more...',
+    rating: starsY,
+    ratingWebp: starsYWebp,
+    label: 'Served with french fries + drink',
+  },
+  {
+    id: 6,
+    title: 'Featured Meal',
+    img: dish6,
+    imgWebp: dish6Webp,
+    description:
+      'Choice of: Coke, Fanta, Sprite, Upgrade to large fries, Add whopper patty, Add Tender crisp patty and more...',
+    rating: starsY,
+    ratingWebp: starsYWebp,
+    label: 'Served with french fries + drink',
+  },
+];
