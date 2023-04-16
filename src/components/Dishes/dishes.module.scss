@@ -3,13 +3,18 @@
 @use '../../styles/functions.scss' as f;
 
 .dishes {
+  border: 5px solid tomato;
+  padding-block: 90px 30px;
+
+  @include m.phone {
+    padding-block: 30px 30px;
+  }
 }
 
-.container {
-}
+// .container {
+// }
 
 .title {
-  margin: 90px 60px;
   text-align: center;
   font-size: 36px;
   line-height: f.ratio(36, 90);
@@ -24,6 +29,14 @@
     line-height: f.ratio(20, 70);
     background: url('../../assets/images/dishes.png') center center / 200px 90px
       no-repeat;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 60px;
+
+    @include m.phone {
+      margin-bottom: 30px;
+    }
   }
 }
 

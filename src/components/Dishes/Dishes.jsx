@@ -23,7 +23,12 @@ function Dishes() {
       <div className="container">
         <div className={styles.container}>
           <h3 className={styles.title}>Dish Of The Day</h3>
-          <div className={styles.wrapperProducts}>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.05, once: true }}
+            className={styles.wrapperProducts}
+          >
             {dishes.map((item, i) => (
               <MDish
                 custom={i + 1}
@@ -40,7 +45,7 @@ function Dishes() {
                 item={item}
               />
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
