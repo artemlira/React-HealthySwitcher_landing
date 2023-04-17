@@ -24,6 +24,7 @@ function Dishes() {
       <div className="container">
         <div className={styles.container}>
           <h3 className={styles.title}>Dish Of The Day</h3>
+          <hr className="line" />
           <motion.div
             initial="hidden"
             whileInView="visible"

@@ -4,6 +4,10 @@
 
 .work {
   padding-block: 5.625rem 1.875rem;
+
+  @include m.phone {
+    padding-block: 1.875rem;
+  }
 }
 
 .container {
@@ -40,6 +44,10 @@
 
   &:not(:last-child) {
     margin-bottom: 3.75rem;
+
+    @include m.phone {
+      margin-bottom: 1.875rem;
+    }
   }
 }
 

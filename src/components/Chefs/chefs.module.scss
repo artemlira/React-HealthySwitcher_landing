@@ -24,7 +24,7 @@
     5.625rem no-repeat;
 
   @include m.phone {
-    margin: 3.125rem 1.875rem;
+    margin: 0px;
     font-size: 1.25rem;
     line-height: f.ratio(20, 70);
     background: url('../../assets/images/chefs.png') center center / 12.5rem

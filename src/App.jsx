@@ -6,6 +6,7 @@ import About from './components/About/About';
 import Work from './components/Work/Work';
 import Dishes from './components/Dishes/Dishes';
 import Chefs from './components/Chefs/Chefs';
+import Recipes from './components/Recipes/Recipes';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Work />
         <Dishes />
         <Chefs />
+        <Recipes />
       </main>
       <Footer />
     </>

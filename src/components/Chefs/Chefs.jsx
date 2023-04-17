@@ -23,6 +23,7 @@ function Chefs() {
       <div className="container">
         <div className={styles.container}>
           <h3 className={styles.title}>This month&apos;s chefs</h3>
+          <hr className="line" />
           <motion.div
             initial="hidden"
             whileInView="visible"
