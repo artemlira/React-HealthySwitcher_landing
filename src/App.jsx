@@ -7,6 +7,7 @@ import Work from './components/Work/Work';
 import Dishes from './components/Dishes/Dishes';
 import Chefs from './components/Chefs/Chefs';
 import Recipes from './components/Recipes/Recipes';
+import Social from './components/Social/Social';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Dishes />
         <Chefs />
         <Recipes />
+        <Social />
       </main>
       <Footer />
     </>

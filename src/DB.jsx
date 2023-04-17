@@ -42,6 +42,19 @@ import starsYWebp from './assets/icons/stars-y.webp';
 import starsG from './assets/icons/stars_g.png';
 import starsGWebp from './assets/icons/stars-g.webp';
 
+import instagramImg1 from './assets/images/instagram/01i.jpg';
+import instagramImg1Webp from './assets/images/instagram/01i.webp';
+import instagramImg2 from './assets/images/instagram/02i.jpg';
+import instagramImg2Webp from './assets/images/instagram/02i.webp';
+import instagramImg3 from './assets/images/instagram/03i.jpg';
+import instagramImg3Webp from './assets/images/instagram/03i.webp';
+import instagramImg4 from './assets/images/instagram/04i.jpg';
+import instagramImg4Webp from './assets/images/instagram/04i.webp';
+import instagramImg5 from './assets/images/instagram/05i.jpg';
+import instagramImg5Webp from './assets/images/instagram/05i.webp';
+import instagramImg6 from './assets/images/instagram/06i.jpg';
+import instagramImg6Webp from './assets/images/instagram/06i.webp';
+
 export const chefs = {
   chef1: {
     avatar: avatar1,
@@ -141,5 +154,32 @@ export const menu = [
     rating: starsY,
     ratingWebp: starsYWebp,
     label: 'Served with french fries + drink',
+  },
+];
+
+export const instagramGallery = [
+  {
+    img: instagramImg1,
+    imgWebp: instagramImg1Webp,
+  },
+  {
+    img: instagramImg2,
+    imgWebp: instagramImg2Webp,
+  },
+  {
+    img: instagramImg3,
+    imgWebp: instagramImg3Webp,
+  },
+  {
+    img: instagramImg4,
+    imgWebp: instagramImg4Webp,
+  },
+  {
+    img: instagramImg5,
+    imgWebp: instagramImg5Webp,
+  },
+  {
+    img: instagramImg6,
+    imgWebp: instagramImg6Webp,
   },
 ];
