@@ -18,7 +18,11 @@ const animation = {
 };
 
 function Dishes() {
-  const { dishes, addProduct } = useContext(MyContext);
+  const { dishes, addProduct, setOpenCart } = useContext(MyContext);
+  const addToCart = (item) => {
+    addProduct(item);
+    setOpenCart(true);
+  };
   return (
     <section className={styles.dishes}>
       <div className="container">
@@ -43,7 +47,7 @@ function Dishes() {
                 rating={item.rating}
                 ratingWebp={item.ratingWebp}
                 label={item.label}
-                addProduct={addProduct}
+                addToCart={addToCart}
                 item={item}
               />
             ))}
@@ -55,20 +59,7 @@ function Dishes() {
 }
 
 const Dish = forwardRef(
-  (
-    {
-      img,
-      imgWebp,
-      title,
-      description,
-      rating,
-      ratingWebp,
-      label,
-      addProduct,
-      item,
-    },
-    ref,
-  ) => (
+  ({ img, imgWebp, title, description, rating, ratingWebp, label, addToCart, item }, ref) => (
     <div
       className={styles.dish}
       ref={ref}
@@ -111,7 +102,7 @@ const Dish = forwardRef(
           <button
             type="button"
             className={styles.dishBtn}
-            onClick={() => addProduct(item)}
+            onClick={() => addToCart(item)}
           >
             ORDER
           </button>
@@ -129,7 +120,7 @@ Dish.propTypes = {
   rating: PropTypes.string.isRequired,
   ratingWebp: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  addProduct: PropTypes.func.isRequired,
+  addToCart: PropTypes.func.isRequired,
   item: PropTypes.shape.isRequired,
 };
 

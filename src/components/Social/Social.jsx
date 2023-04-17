@@ -3,12 +3,14 @@ import { ReactComponent as Twitter } from '../../assets/icons/twitter.svg';
 import { ReactComponent as Instagram } from '../../assets/icons/instagram.svg';
 import { ReactComponent as Facebook } from '../../assets/icons/facebook.svg';
 import { instagramGallery } from '../../DB';
-// import PropTypes from 'prop-types';
 import styles from './social.module.scss';
 
 function Social() {
   return (
-    <section className={styles.social}>
+    <section
+      className={styles.social}
+      id="social"
+    >
       <div className="container">
         <div className={styles.container}>
           <h3 className={styles.title}>We in Social</h3>
@@ -99,9 +101,5 @@ function Social() {
     </section>
   );
 }
-
-// Social.propTypes = {
-//   props: PropTypes.string.isRequired,
-// };
 
 export default Social;

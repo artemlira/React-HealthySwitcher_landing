@@ -24,7 +24,7 @@ const animation = {
 };
 
 function Header() {
-  const { products } = useContext(MyContext);
+  const { products, setOpenCart, openModalCart } = useContext(MyContext);
   const [openMenu, setOpenMenu] = useState();
 
   const closeMenuClick = () => {
@@ -52,7 +52,7 @@ function Header() {
           className={styles.container}
         >
           <a
-            href="#vf"
+            href="/"
             className={styles.logo}
           >
             <Logo />
@@ -64,6 +64,8 @@ function Header() {
               closeMenuClick={closeMenuClick}
               closeMenuKey={closeMenuKey}
               products={products}
+              setOpenCart={setOpenCart}
+              openModalCart={openModalCart}
             />
           ) : (
             <MMenu
@@ -72,24 +74,20 @@ function Header() {
               closeMenuClick={closeMenuClick}
               closeMenuKey={closeMenuKey}
               products={products}
+              setOpenCart={setOpenCart}
+              openModalCart={openModalCart}
             />
           )}
           <div
             role="button"
             tabIndex={0}
-            className={
-              !openMenu
-                ? `${styles.burgerMenu}`
-                : `${styles.burgerMenu} ${styles.active}`
-            }
+            className={!openMenu ? `${styles.burgerMenu}` : `${styles.burgerMenu} ${styles.active}`}
             onClick={() => setOpenMenu(!openMenu)}
             onKeyDown={(e) => managementMenuKey(e)}
           >
             <span
               className={
-                !openMenu
-                  ? `${styles.menuTablet}`
-                  : `${styles.menuTablet} ${styles.active}`
+                !openMenu ? `${styles.menuTablet}` : `${styles.menuTablet} ${styles.active}`
               }
             />
           </div>
@@ -100,20 +98,12 @@ function Header() {
 }
 
 const Menu = forwardRef(
-  ({ openMenu, closeMenuClick, closeMenuKey, products }, ref) => (
+  ({ openMenu, closeMenuClick, closeMenuKey, products, setOpenCart, openModalCart }, ref) => (
     <div
-      className={
-        !openMenu
-          ? `${styles.navWrapper}`
-          : `${styles.navWrapper} ${styles.active}`
-      }
+      className={!openMenu ? `${styles.navWrapper}` : `${styles.navWrapper} ${styles.active}`}
       ref={ref}
     >
-      <nav
-        className={
-          !openMenu ? `${styles.nav}` : `${styles.active} ${styles.nav}`
-        }
-      >
+      <nav className={!openMenu ? `${styles.nav}` : `${styles.active} ${styles.nav}`}>
         <ul className={styles.navList}>
           <li className={styles.navItem}>
             <a
@@ -126,7 +116,7 @@ const Menu = forwardRef(
           </li>
           <li className={styles.navItem}>
             <a
-              href="#nk"
+              href="#recipes"
               onClick={() => closeMenuClick()}
               onKeyDown={(e) => closeMenuKey(e)}
             >
@@ -135,7 +125,7 @@ const Menu = forwardRef(
           </li>
           <li className={styles.navItem}>
             <a
-              href="#mkl"
+              href="#chefs"
               onClick={() => closeMenuClick()}
               onKeyDown={(e) => closeMenuKey(e)}
             >
@@ -144,7 +134,7 @@ const Menu = forwardRef(
           </li>
           <li className={styles.navItem}>
             <a
-              href="#xs"
+              href="#social"
               onClick={() => closeMenuClick()}
               onKeyDown={(e) => closeMenuKey(e)}
             >
@@ -152,7 +142,12 @@ const Menu = forwardRef(
             </a>
           </li>
         </ul>
-        <div className={styles.cart}>
+        <div
+          role="presentation"
+          className={styles.cart}
+          onClick={() => setOpenCart(true)}
+          onKeyDown={(e) => openModalCart(e)}
+        >
           {products.length === 0 ? (
             <CartEmpty className={styles.cartEmpty} />
           ) : (
@@ -170,6 +165,8 @@ const Menu = forwardRef(
 Menu.propTypes = {
   openMenu: PropTypes.bool.isRequired,
   closeMenuClick: PropTypes.func.isRequired,
+  setOpenCart: PropTypes.func.isRequired,
+  openModalCart: PropTypes.func.isRequired,
   closeMenuKey: PropTypes.func.isRequired,
   products: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

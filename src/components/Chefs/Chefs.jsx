@@ -19,7 +19,10 @@ const animatedDown = {
 function Chefs() {
   const { chef1, chef2, chef3 } = chefs;
   return (
-    <section className={styles.chefs}>
+    <section
+      className={styles.chefs}
+      id="chefs"
+    >
       <div className="container">
         <div className={styles.container}>
           <h3 className={styles.title}>This month&apos;s chefs</h3>

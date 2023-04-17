@@ -8,10 +8,12 @@ import Dishes from './components/Dishes/Dishes';
 import Chefs from './components/Chefs/Chefs';
 import Recipes from './components/Recipes/Recipes';
 import Social from './components/Social/Social';
+import Cart from './components/Cart/Cart';
 
 function App() {
   return (
     <>
+      <Cart />
       <Header />
       <main className="main">
         <Hero />

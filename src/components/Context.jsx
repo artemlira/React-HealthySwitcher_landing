@@ -8,12 +8,27 @@ export default function Context({ children }) {
   // products that go to cart when you click on the "Add to cart" button
   const [products, setProducts] = useState([]);
   const [dishes, setDishes] = useState([]);
+  const [openCart, setOpenCart] = useState(false);
 
   // determines the total number of products in the basket
   let totalProducts = 0;
 
   // eslint-disable-next-line no-return-assign
   products.forEach((item) => (totalProducts += item.amount));
+
+  // Additional handler for the event of opening the cart by the Enter button
+  const openModalCart = (e) => {
+    if (e.type === 'keydown' && e.key === 'Enter') {
+      setOpenCart(true);
+    }
+  };
+
+  // Additional handler for the event of closing the cart by the Enter button
+  const closeModalCart = (e) => {
+    if (e.type === 'keydown' && e.key === 'Enter') {
+      setOpenCart(false);
+    }
+  };
 
   // retrieve data from a local file
   useEffect(() => {
@@ -95,6 +110,10 @@ export default function Context({ children }) {
       removeProduct,
       dishes,
       setDishes,
+      openCart,
+      setOpenCart,
+      openModalCart,
+      closeModalCart,
     }),
     [
       products,
@@ -104,6 +123,10 @@ export default function Context({ children }) {
       removeProduct,
       dishes,
       setDishes,
+      openCart,
+      setOpenCart,
+      openModalCart,
+      closeModalCart,
     ],
   );
 

@@ -9,7 +9,10 @@ import styles from './recipes.module.scss';
 
 function Recipes() {
   return (
-    <section className={styles.recipes}>
+    <section
+      className={styles.recipes}
+      id="recipes"
+    >
       <div className="container">
         <div className={styles.container}>
           <h3 className={styles.title}>Recipes From Our Chefs</h3>
