@@ -1,6 +1,5 @@
 import React, { useContext, useState, forwardRef } from 'react';
 import PropTypes from 'prop-types';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { motion } from 'framer-motion';
 import { ReactComponent as Logo } from '../../assets/icons/logo.svg';
 import { ReactComponent as CartEmpty } from '../../assets/icons/cart-outline.svg';
@@ -27,6 +26,10 @@ function Header() {
   const { products, setOpenCart, openModalCart } = useContext(MyContext);
   const [openMenu, setOpenMenu] = useState();
 
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   const closeMenuClick = () => {
     setOpenMenu(false);
   };
@@ -45,18 +48,10 @@ function Header() {
   return (
     <header className={styles.header}>
       <div className="container">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-          className={styles.container}
-        >
-          <a
-            href="/"
-            className={styles.logo}
-          >
+        <motion.div initial="hidden" animate="visible" exit="exit" className={styles.container}>
+          <p role="presentation" onClick={() => scrollToTop()} className={styles.logo}>
             <Logo />
-          </a>
+          </p>
           {!openMenu ? (
             <Menu
               variants={animation}
@@ -66,6 +61,7 @@ function Header() {
               products={products}
               setOpenCart={setOpenCart}
               openModalCart={openModalCart}
+              scrollToTop={scrollToTop}
             />
           ) : (
             <MMenu
@@ -76,6 +72,7 @@ function Header() {
               products={products}
               setOpenCart={setOpenCart}
               openModalCart={openModalCart}
+              scrollToTop={scrollToTop}
             />
           )}
           <div
@@ -98,7 +95,10 @@ function Header() {
 }
 
 const Menu = forwardRef(
-  ({ openMenu, closeMenuClick, closeMenuKey, products, setOpenCart, openModalCart }, ref) => (
+  (
+    { openMenu, closeMenuClick, closeMenuKey, products, setOpenCart, openModalCart, scrollToTop },
+    ref,
+  ) => (
     <div
       className={!openMenu ? `${styles.navWrapper}` : `${styles.navWrapper} ${styles.active}`}
       ref={ref}
@@ -106,38 +106,29 @@ const Menu = forwardRef(
       <nav className={!openMenu ? `${styles.nav}` : `${styles.active} ${styles.nav}`}>
         <ul className={styles.navList}>
           <li className={styles.navItem}>
-            <a
-              href="/"
-              onClick={() => closeMenuClick()}
+            <p
+              role="presentation"
+              onClick={() => {
+                closeMenuClick();
+                scrollToTop();
+              }}
               onKeyDown={(e) => closeMenuKey(e)}
             >
               Menu
-            </a>
+            </p>
           </li>
           <li className={styles.navItem}>
-            <a
-              href="#recipes"
-              onClick={() => closeMenuClick()}
-              onKeyDown={(e) => closeMenuKey(e)}
-            >
+            <a href="#recipes" onClick={() => closeMenuClick()} onKeyDown={(e) => closeMenuKey(e)}>
               Recipes
             </a>
           </li>
           <li className={styles.navItem}>
-            <a
-              href="#chefs"
-              onClick={() => closeMenuClick()}
-              onKeyDown={(e) => closeMenuKey(e)}
-            >
+            <a href="#chefs" onClick={() => closeMenuClick()} onKeyDown={(e) => closeMenuKey(e)}>
               Chefs
             </a>
           </li>
           <li className={styles.navItem}>
-            <a
-              href="#social"
-              onClick={() => closeMenuClick()}
-              onKeyDown={(e) => closeMenuKey(e)}
-            >
+            <a href="#social" onClick={() => closeMenuClick()} onKeyDown={(e) => closeMenuKey(e)}>
               Contacts
             </a>
           </li>
@@ -168,6 +159,7 @@ Menu.propTypes = {
   setOpenCart: PropTypes.func.isRequired,
   openModalCart: PropTypes.func.isRequired,
   closeMenuKey: PropTypes.func.isRequired,
+  scrollToTop: PropTypes.func.isRequired,
   products: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 

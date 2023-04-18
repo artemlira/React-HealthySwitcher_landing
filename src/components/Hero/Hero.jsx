@@ -15,14 +15,11 @@ function Hero() {
           </h1>
           <p className={styles.text}>
             <span>HEALTHY SWITCHER</span>
-            chefs do all the prep work, like peeling, chopping & marinating, so
-            you can cook a fresh homemade dinner in just 15 minutes.
+            chefs do all the prep work, like peeling, chopping & marinating, so you can cook a fresh
+            homemade dinner in just 15 minutes.
           </p>
-          <button
-            type="button"
-            className={styles.btn}
-          >
-            Order Now
+          <button className={styles.btn} type="button">
+            <a href="#dishes">Order Now</a>
           </button>
           <Contacts />
         </div>

@@ -79,7 +79,7 @@ export default function Context({ children }) {
     setProducts([
       ...products,
       {
-        id: item.id,
+        id: products.length + 1,
         title: item.title,
         img: item.img,
         imgWebp: item.imgWebp,

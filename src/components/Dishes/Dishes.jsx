@@ -24,7 +24,7 @@ function Dishes() {
     setOpenCart(true);
   };
   return (
-    <section className={styles.dishes}>
+    <section className={styles.dishes} id="dishes">
       <div className="container">
         <div className={styles.container}>
           <h3 className={styles.title}>Dish Of The Day</h3>
@@ -60,23 +60,14 @@ function Dishes() {
 
 const Dish = forwardRef(
   ({ img, imgWebp, title, description, rating, ratingWebp, label, addToCart, item }, ref) => (
-    <div
-      className={styles.dish}
-      ref={ref}
-    >
+    <div className={styles.dish} ref={ref}>
       <div className={styles.share}>
         <Share />
       </div>
       <div className={styles.dishImage}>
         <picture>
-          <source
-            srcSet={imgWebp}
-            type="image/webp"
-          />
-          <img
-            src={img}
-            alt="dish"
-          />
+          <source srcSet={imgWebp} type="image/webp" />
+          <img src={img} alt="dish" />
         </picture>
       </div>
       <div className={styles.dishBody}>
@@ -88,22 +79,12 @@ const Dish = forwardRef(
         <div className={styles.rating}>
           <div className={styles.stars}>
             <picture>
-              <source
-                srcSet={ratingWebp}
-                type="image/webp"
-              />
-              <img
-                src={rating}
-                alt="rating"
-              />
+              <source srcSet={ratingWebp} type="image/webp" />
+              <img src={rating} alt="rating" />
             </picture>
             <span>12</span>
           </div>
-          <button
-            type="button"
-            className={styles.dishBtn}
-            onClick={() => addToCart(item)}
-          >
+          <button type="button" className={styles.dishBtn} onClick={() => addToCart(item)}>
             ORDER
           </button>
         </div>

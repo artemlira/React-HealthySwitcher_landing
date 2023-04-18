@@ -55,21 +55,30 @@
 
 .btn {
   display: block;
-  padding: 1.5625rem 3.625rem;
+  padding-block: 1.5625rem;
   background-color: v.$primary;
   border-radius: 2.6875rem;
-  color: v.$black;
   margin-inline: auto;
-  font-size: 1.125rem;
-  line-height: f.ratio(18, 21.78);
-  font-weight: 700;
-  letter-spacing: 0.1875rem;
   transition: all 0.3s;
 
+  a {
+    color: v.$black;
+    font-size: 1.125rem;
+    line-height: f.ratio(18, 21.78);
+    font-weight: 700;
+    letter-spacing: 0.1875rem;
+    padding: 1.5625rem 3.625rem;
+    border-radius: 2.6875rem;
+
+    @include m.phone {
+      font-size: 1rem;
+      line-height: f.ratio(16, 19.78);
+      padding: 0.9375rem 1.875rem;
+    }
+  }
+
   @include m.phone {
-    font-size: 1rem;
-    line-height: f.ratio(16, 19.78);
-    padding: 0.9375rem 1.875rem;
+    padding-block: 0.9375rem;
   }
 
   &:hover {
