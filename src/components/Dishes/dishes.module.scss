@@ -16,15 +16,13 @@
   line-height: f.ratio(36, 90);
   color: #d9d9d9;
   letter-spacing: 0.4375rem;
-  background: url('../../assets/images/dishes.png') center center / 25rem
-    5.625rem no-repeat;
+  background: url('../../assets/images/dishes.png') center center / 25rem 5.625rem no-repeat;
 
   @include m.phone {
     margin: 0px;
     font-size: 1.25rem;
     line-height: f.ratio(20, 70);
-    background: url('../../assets/images/dishes.png') center center / 12.5rem
-      5.625rem no-repeat;
+    background: url('../../assets/images/dishes.png') center center / 12.5rem 5.625rem no-repeat;
   }
 
   &:not(:last-child) {
@@ -124,9 +122,11 @@
   flex-wrap: wrap;
   gap: 0.625rem;
 }
+
 .stars {
+  flex: 0 0 155px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 0.75rem;
 

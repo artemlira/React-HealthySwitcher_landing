@@ -1,5 +1,5 @@
 import React from 'react';
-import Contacts from '../Contacts/Contacts';
+import Contacts from '../Contacts';
 import styles from './hero.module.scss';
 
 function Hero() {

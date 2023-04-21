@@ -37,7 +37,7 @@ function Work() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ amount: 0.01, once: true }}
+            viewport={{ amount: 1.0, once: true }}
             className={styles.works}
           >
             <MBox
@@ -72,10 +72,7 @@ function Work() {
 }
 
 const Box = forwardRef(({ title, text }, ref) => (
-  <div
-    className={styles.boxWork}
-    ref={ref}
-  >
+  <div className={styles.boxWork} ref={ref}>
     <h4 className={styles.workTitle}>{title}</h4>
     <hr className={styles.workLine} />
     <p className={styles.workText}>{text}</p>

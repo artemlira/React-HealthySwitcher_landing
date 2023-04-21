@@ -1,6 +1,8 @@
 import React, { useContext, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
+import Rating from '@mui/material/Rating';
+import Stack from '@mui/material/Stack';
 import { MyContext } from '../Context';
 import { ReactComponent as Share } from '../../assets/icons/share.svg';
 import styles from './dishes.module.scss';
@@ -32,7 +34,10 @@ function Dishes() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ amount: 0.05, once: true }}
+            viewport={{
+              amount: 0.1,
+              once: true,
+            }}
             className={styles.wrapperProducts}
           >
             {dishes.map((item, i) => (
@@ -44,8 +49,8 @@ function Dishes() {
                 img={`../../assets/images/dishes/${item.img}`}
                 imgWebp={item.imgWebp}
                 description={item.description}
-                rating={item.rating}
-                ratingWebp={item.ratingWebp}
+                // rating={item.rating}
+                // ratingWebp={item.ratingWebp}
                 label={item.label}
                 addToCart={addToCart}
                 item={item}
@@ -58,48 +63,49 @@ function Dishes() {
   );
 }
 
-const Dish = forwardRef(
-  ({ img, imgWebp, title, description, rating, ratingWebp, label, addToCart, item }, ref) => (
-    <div className={styles.dish} ref={ref}>
-      <div className={styles.share}>
-        <Share />
+const Dish = forwardRef(({ img, imgWebp, title, description, label, addToCart, item }, ref) => (
+  <div className={styles.dish} ref={ref}>
+    <div className={styles.share}>
+      <Share />
+    </div>
+    <div className={styles.dishImage}>
+      <picture>
+        <source srcSet={imgWebp} type="image/webp" />
+        <img src={img} alt="dish" />
+      </picture>
+    </div>
+    <div className={styles.dishBody}>
+      <h4 className={styles.dishTitle}>{title}</h4>
+      <p className={styles.dishLabel}>{label}</p>
+      <div className={styles.dishDescription}>
+        <p>{description}</p>
       </div>
-      <div className={styles.dishImage}>
-        <picture>
-          <source srcSet={imgWebp} type="image/webp" />
-          <img src={img} alt="dish" />
-        </picture>
-      </div>
-      <div className={styles.dishBody}>
-        <h4 className={styles.dishTitle}>{title}</h4>
-        <p className={styles.dishLabel}>{label}</p>
-        <div className={styles.dishDescription}>
-          <p>{description}</p>
-        </div>
-        <div className={styles.rating}>
-          <div className={styles.stars}>
-            <picture>
+      <div className={styles.rating}>
+        <div className={styles.stars}>
+          <Stack spacing={1}>
+            <Rating name="size-large" defaultValue={3.5} precision={0.5} size="large" />
+          </Stack>
+          {/* <picture>
               <source srcSet={ratingWebp} type="image/webp" />
               <img src={rating} alt="rating" />
-            </picture>
-            <span>12</span>
-          </div>
-          <button type="button" className={styles.dishBtn} onClick={() => addToCart(item)}>
-            ORDER
-          </button>
+            </picture> */}
+          <span>12</span>
         </div>
+        <button type="button" className={styles.dishBtn} onClick={() => addToCart(item)}>
+          ORDER
+        </button>
       </div>
     </div>
-  ),
-);
+  </div>
+));
 
 Dish.propTypes = {
   title: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
   imgWebp: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  rating: PropTypes.string.isRequired,
-  ratingWebp: PropTypes.string.isRequired,
+  // rating: PropTypes.string.isRequired,
+  // ratingWebp: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   addToCart: PropTypes.func.isRequired,
   item: PropTypes.shape.isRequired,

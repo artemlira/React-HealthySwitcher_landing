@@ -1,5 +1,5 @@
 import React from 'react';
-import Contacts from '../Contacts/Contacts';
+import Contacts from '../Contacts';
 import { ReactComponent as Logo } from '../../assets/icons/logo.svg';
 import styles from './footer.module.scss';
 
@@ -13,9 +13,7 @@ function Footer() {
           <div className={styles.logo}>
             <Logo />
           </div>
-          <p className={styles.text}>
-            © Designed by Yellow Snow. All Rights Reserved.
-          </p>
+          <p className={styles.text}>© Designed by Yellow Snow. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
